@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn0hahdx7kxqn"]
+
+[ext_resource type="Script" uid="uid://cwluw1rbfjs2u" path="res://Scripts/asteroid.gd" id="1_0tomg"]
+
+[node name="Asteroid" type="CharacterBody2D"]
+script = ExtResource("1_0tomg")
