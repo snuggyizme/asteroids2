@@ -23,15 +23,9 @@ func _process(delta):
 		velocity.y += acceleration * moveDirection
 	
 	# BOUNCE
-	var screenSize = Vector2(get_viewport().size)
-	position = Vector2(
-		position.clampf(0, screenSize.x).x,
-		position.clampf(0, screenSize.y).y,
-	)
-	if position.x >= screenSize.x or position.x <= 0:
-		velocity.x *= -0.75
-	if position.y >= screenSize.y or position.y <= 0:
-		velocity.y *= -0.75
+	var bounceExport = GlobalTools.bounce(position)
+	position = bounceExport[0]
+	velocity = bounceExport[1]
 	
 	# ~ move and slide ~                                                        <3
 	velocity = velocity.limit_length(maxspeed)
@@ -40,11 +34,12 @@ func _process(delta):
 func _input(event):
 	if event.is_action_pressed("shipShoot"):
 		# SHOOT
-		var bullet = bulletScene.instantiate()
-		bullet.position = position
-		bullet.rotation = rotation + 90
-		get_parent().add_child(bullet)
-		
-		# RECOIL
-		velocity -= (get_global_mouse_position() - global_position).normalized() * recoil
+		while true:
+			var bullet = bulletScene.instantiate()
+			bullet.position = position
+			bullet.rotation = rotation + 90
+			get_parent().add_child(bullet)
+			
+			# RECOIL
+			velocity -= (get_global_mouse_position() - global_position).normalized() * recoil
 		

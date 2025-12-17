@@ -4,4 +4,5 @@
 
 [node name="Asteroid" type="CharacterBody2D"]
 motion_mode = 1
+wall_min_slide_angle = 1.5707964
 script = ExtResource("1_0tomg")

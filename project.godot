@@ -14,6 +14,15 @@ config/name="asteroids2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+GlobalTools="*res://Scripts/tools.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+
 [input]
 
 shipLeft={

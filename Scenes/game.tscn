@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg8fm6k3tx288"]
+
+[ext_resource type="PackedScene" uid="uid://bwaufagwo64j" path="res://Scenes/player.tscn" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://xcdkp0ntuouv" path="res://Scenes/asteroids.gd" id="2_wrm1d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_qxrlw")]
+
+[node name="Asteroids" type="Node" parent="."]
+script = ExtResource("2_wrm1d")
