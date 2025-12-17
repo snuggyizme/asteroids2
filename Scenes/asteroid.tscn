@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://cwluw1rbfjs2u" path="res://Scripts/asteroid.gd" id="1_0tomg"]
 
 [node name="Asteroid" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_0tomg")
